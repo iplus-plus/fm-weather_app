@@ -1,34 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from "react";
+import Navbar from "./components/Navbar.jsx";
+import Searchbar from "./components/Searchbar.jsx";
+import CurrentForecast from "./components/CurrentForecast.jsx";
+import DailyForecast from "./components/DailyForecast.jsx";
+import HourlyForecast from "./components/HourlyForecast.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <div className="p-4">
+            <Navbar />
+            <main>
+                <p
+                    style={{ fontFamily: "var(--bricolage)" }}
+                    className="my-[80px] leading-tight mx-auto text-6xl max-w-[10ch] text-center font-bold text-[var(--neutral-0)] first-letter:uppercase"
+                >
+                    how's the sky looking today?
+                </p>
+                <Searchbar />
+                <CurrentForecast />
+                <DailyForecast />
+                <HourlyForecast />
+            </main>
+        </div>
+    );
+};
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
-
-export default App
+export default App;
