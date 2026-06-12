@@ -1,15 +1,16 @@
-import React from "react";
+import { setIcon } from "../utils/data.js";
 
-const DailyForecast = () => {
-    const data = [
-        { name: "tue", day: 14, night: 12 },
-        { name: "wed", day: 14, night: 12 },
-        { name: "thu", day: 14, night: 12 },
-        { name: "fri", day: 14, night: 12 },
-        { name: "sat", day: 14, night: 12 },
-        { name: "sun", day: 14, night: 12 },
-        { name: "mon", day: 14, night: 12 }
-    ];
+const DailyForecast = ({ dailyData }) => {
+    const { temperature_2m_max, temperature_2m_min, time, weather_code } =
+        dailyData || {};
+    const data = [1, 2, 3, 4, 5, 6, 7].map((item, i) => ({
+        id: item,
+        max: temperature_2m_max?.[i],
+        min: temperature_2m_min?.[i],
+        time: time?.[i],
+        icon: weather_code?.[i]
+    }));
+
     return (
         <div className="mt-12 text-white">
             <h2 className="mb-4 text-2xl font-semibold capitalize">
@@ -19,18 +20,21 @@ const DailyForecast = () => {
                 {data.map(d => (
                     <div
                         className="bg-[var(--neutral-800)] p-4 rounded-xl border-2 border-[var(--neutral-600)]"
-                        key={d.name}
+                        key={d?.id}
                     >
                         <h3 className="capitalize font-medium text-center">
-                            {d.name}
+                            {d?.time}
                         </h3>
                         <img
                             className="size-12 mx-auto my-2"
-                            src="../../public/images/icon-overcast.webp"
+                            src={`../../public/images/${
+                                setIcon[d?.icon] || setIcon[0]
+                            }`}
+                            alt="weather icon"
                         />
                         <div className="flex items-center justify-between text-sm">
-                            <span>{d.day}°</span>
-                            <span>{d.night}°</span>
+                            <span>{Math.round(d?.max)}°</span>
+                            <span>{Math.round(d?.min)}°</span>
                         </div>
                     </div>
                 ))}
