@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { setIcon } from "../utils/data.js";
+import iconDropdown from "../assets/images/icon-dropdown.svg";
 
 const DAYS = [
     "sunday",
@@ -59,11 +60,7 @@ const HourlyForecast = ({ hourlyData, units }) => {
                     className="relative capitalize flex bg-[var(--neutral-600)] rounded items-center gap-4 py-2 text-base font-medium px-4"
                 >
                     {selectedDay}
-                    <img
-                        className="size-3"
-                        src="../../public/images/icon-dropdown.svg"
-                        alt=""
-                    />
+                    <img className="size-3" src={iconDropdown} alt="" />
 
                     <ul
                         className={`absolute right-0 top-0 mt-14 flex w-[180px] flex-col gap-2 rounded-lg border-2 border-[var(--neutral-600)] bg-[var(--neutral-800)] p-2 text-left transition-all duration-300 ${
@@ -98,7 +95,7 @@ const HourlyForecast = ({ hourlyData, units }) => {
                         <div className="flex items-center gap-6">
                             <img
                                 className="size-12"
-                                src={`../../public/images/${setIcon[currentData.icons[i]]}`}
+                                src={setIcon[currentData.icons[i]]}
                                 alt=""
                             />
                             <p className="text-xl font-medium">

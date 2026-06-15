@@ -27,3 +27,13 @@ body {
     font-size: 1.1rem;
     background: var(--neutral-900);
 }
+
+.mainBg {
+    background-image: url("./assets/images/bg-today-small.svg");
+}
+
+@media screen and (min-width: 768px) {
+    .mainBg {
+        background-image: url("./assets/images/bg-today-large.svg");
+    }
+}

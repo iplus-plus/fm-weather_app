@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import iconSearch from "../assets/images/icon-search.svg";
 const Searchbar = ({
     setPlace,
     setDebounce,
@@ -46,8 +46,8 @@ const Searchbar = ({
             >
                 <img
                     loading="lazy"
-                    src="../../public/images/icon-search.svg"
-                    alt=""
+                    src={iconSearch}
+                    alt="icon search"
                 />
                 <input
                     className="w-full flex-1 bg-transparent text-2xl font-medium text-white outline-none"

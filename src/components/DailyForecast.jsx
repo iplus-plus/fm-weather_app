@@ -27,7 +27,7 @@ const DailyForecast = ({ dailyData }) => {
                         </h3>
                         <img
                             className="mx-auto my-2 size-12"
-                            src={`../../public/images/${setIcon[d.icon] || setIcon[0]}`}
+                            src={setIcon[d.icon] || setIcon[0]}
                             alt="weather icon"
                         />
                         <div className="flex items-center justify-between text-sm">

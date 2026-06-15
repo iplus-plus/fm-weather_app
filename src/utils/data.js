@@ -1,23 +1,32 @@
+import sunny from "../assets/images/icon-sunny.webp";
+import partlyCloudy from "../assets/images/icon-partly-cloudy.webp";
+import overcast from "../assets/images/icon-overcast.webp";
+import fog from "../assets/images/icon-fog.webp";
+import drizzle from "../assets/images/icon-drizzle.webp";
+import rain from "../assets/images/icon-rain.webp";
+import snow from "../assets/images/icon-snow.webp";
+import storm from "../assets/images/icon-storm.webp";
+
 export const setIcon = {
-    0: "icon-sunny.webp",
-    1: "icon-sunny.webp",
-    2: "icon-partly-cloudy.webp",
-    3: "icon-overcast.webp",
-    45: "icon-fog.webp",
-    48: "icon-fog.webp",
-    51: "icon-drizzle.webp",
-    53: "icon-drizzle.webp",
-    55: "icon-drizzle.webp",
-    61: "icon-rain.webp",
-    63: "icon-rain.webp",
-    65: "icon-rain.webp",
-    71: "icon-snow.webp",
-    73: "icon-snow.webp",
-    75: "icon-snow.webp",
-    80: "icon-rain.webp",
-    81: "icon-rain.webp",
-    82: "icon-rain.webp",
-    95: "icon-storm.webp",
-    96: "icon-storm.webp",
-    99: "icon-storm.webp"
+    0: sunny,
+    1: sunny,
+    2: partlyCloudy,
+    3: overcast,
+    45: fog,
+    48: fog,
+    51: drizzle,
+    53: drizzle,
+    55: drizzle,
+    61: rain,
+    63: rain,
+    65: rain,
+    71: snow,
+    73: snow,
+    75: snow,
+    80: rain,
+    81: rain,
+    82: rain,
+    95: storm,
+    96: storm,
+    99: storm
 };

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import logo from "../assets/images/logo.svg";
+import iconCheckmark from "../assets/images/icon-checkmark.svg";
+import iconUnits from "../assets/images/icon-units.svg";
+import iconDopdown from "../assets/images/icon-dropdown.svg";
 
 const TEMPERATURE_UNITS = [
     { id: "celsius", name: "celsius", unit: "°C" },
@@ -32,14 +36,7 @@ const UnitOption = ({
             {" "}
             {name} {unit && `(${unit})`}
         </span>
-        {settings === id ? (
-            <img
-                className="size-3"
-                src="../../public/images/icon-checkmark.svg"
-            />
-        ) : (
-            ""
-        )}
+        {settings === id ? <img className="size-3" src={iconCheckmark} /> : ""}
     </li>
 );
 
@@ -83,15 +80,15 @@ const Navbar = ({ setSettings, settings }) => {
     return (
         <header>
             <div className="flex justify-between items-center">
-                <img src="../../public/images/logo.svg" alt="Logo" />
+                <img src={logo} alt="Logo" />
 
                 <button
                     onClick={() => setIsOpen(prev => !prev)}
                     className="relative flex capitalize items-center gap-2 rounded-lg text-white py-2 px-3 bg-[var(--neutral-800)]"
                 >
-                    <img src="../../public/images/icon-units.svg" alt="" />
+                    <img src={iconUnits} alt="icon units" />
                     units
-                    <img src="../../public/images/icon-dropdown.svg" alt="" />
+                    <img src={iconDopdown} alt="dropdown icon" />
                     <div
                         className={`z-10 absolute right-0 top-0 mt-14 w-[220px] rounded-lg border border-[var(--neutral-600)] bg-[var(--neutral-800)] px-2 text-left transition-all duration-300 ${
                             isOpen

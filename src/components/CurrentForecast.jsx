@@ -25,7 +25,13 @@ const MainInfo = ({ geoData, forecastData }) => {
     const iconSrc = ICON_MAP[iconFileName];
 
     return (
+<<<<<<< HEAD
         <div className="mt-8 md:px-14 bg-[url('images/bg-today-small.svg')] md:bg-[url('../../public/images/bg-today-large.svg')] flex h-[350px] flex-col md:flex-row items-center justify-[...]">
+=======
+        <div
+            className={`mt-8 mainBg md:px-14 flex h-[350px] flex-col md:flex-row items-center justify-center md:justify-between bg-center rounded-xl bg-cover bg-no-repeat p-4`}
+        >
+>>>>>>> 27f6806 (fix image directory)
             <div>
                 <h1 className="text-center text-2xl font-black capitalize text-[var(--neutral-0)]">
                     {geoData?.name}, {geoData?.country}
@@ -42,7 +48,11 @@ const MainInfo = ({ geoData, forecastData }) => {
             <div className="mt-8 md:mt-0 flex items-center gap-4">
                 <img
                     className="size-28"
+<<<<<<< HEAD
                     src={iconSrc}
+=======
+                    src={setIcon[current?.weather_code] || setIcon[0]}
+>>>>>>> 27f6806 (fix image directory)
                     alt="weather icon"
                 />
                 <p className="text-7xl font-bold italic text-white">
