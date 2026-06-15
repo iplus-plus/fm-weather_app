@@ -25,7 +25,7 @@ const MainInfo = ({ geoData, forecastData }) => {
     const iconSrc = ICON_MAP[iconFileName];
 
     return (
-        <div className="mt-8 md:px-14 bg-[url('../../public/images/bg-today-small.svg')] md:bg-[url('../../public/images/bg-today-large.svg')] flex h-[350px] flex-col md:flex-row items-center justify-[...]">
+        <div className="mt-8 md:px-14 bg-[url('images/bg-today-small.svg')] md:bg-[url('../../public/images/bg-today-large.svg')] flex h-[350px] flex-col md:flex-row items-center justify-[...]">
             <div>
                 <h1 className="text-center text-2xl font-black capitalize text-[var(--neutral-0)]">
                     {geoData?.name}, {geoData?.country}
