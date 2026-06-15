@@ -26,7 +26,7 @@ const groupByDay = (temperature_2m, time, weather_code) => {
     return days;
 };
 
-const formatHour = (dateString) =>
+const formatHour = dateString =>
     new Date(dateString).toLocaleTimeString("en-GB", {
         hour: "2-digit",
         minute: "2-digit",
@@ -77,7 +77,9 @@ const HourlyForecast = ({ hourlyData, units }) => {
                                 key={d}
                                 onClick={() => setSelectedDay(d)}
                                 className={`px-4 py-3 rounded transition-colors hover:bg-[var(--neutral-600)] ${
-                                    selectedDay === d ? "bg-[var(--neutral-600)]" : ""
+                                    selectedDay === d
+                                        ? "bg-[var(--neutral-600)]"
+                                        : ""
                                 }`}
                             >
                                 {d}
@@ -87,7 +89,7 @@ const HourlyForecast = ({ hourlyData, units }) => {
                 </button>
             </header>
 
-            <ul className="flex h-[400px] flex-col gap-4 overflow-y-auto mt-4">
+            <ul className="flex h-[400px] md:h-[650px] flex-col gap-4 overflow-y-auto mt-4">
                 {currentData?.times?.map((d, i) => (
                     <li
                         key={d}
@@ -99,10 +101,13 @@ const HourlyForecast = ({ hourlyData, units }) => {
                                 src={`../../public/images/${setIcon[currentData.icons[i]]}`}
                                 alt=""
                             />
-                            <p className="text-xl font-medium">{formatHour(d)}</p>
+                            <p className="text-xl font-medium">
+                                {formatHour(d)}
+                            </p>
                         </div>
                         <p className="font-medium">
-                            {Math.round(currentData.temperatures[i])} {units?.temperature_2m}
+                            {Math.round(currentData.temperatures[i])}{" "}
+                            {units?.temperature_2m}
                         </p>
                     </li>
                 ))}

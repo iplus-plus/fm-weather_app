@@ -16,7 +16,7 @@ const DailyForecast = ({ dailyData }) => {
     return (
         <div className="mt-12 text-white">
             <h2 className="mb-4 text-2xl font-semibold capitalize">daily forecast</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-7 gap-4">
                 {data.map(d => (
                     <div
                         key={d.id}
