@@ -1,10 +1,31 @@
 import { setIcon } from "../utils/data.js";
+import iconSunny from "../../public/images/icon-sunny.webp";
+import iconPartlyCloudy from "../../public/images/icon-partly-cloudy.webp";
+import iconOvercast from "../../public/images/icon-overcast.webp";
+import iconFog from "../../public/images/icon-fog.webp";
+import iconDrizzle from "../../public/images/icon-drizzle.webp";
+import iconRain from "../../public/images/icon-rain.webp";
+import iconSnow from "../../public/images/icon-snow.webp";
+import iconStorm from "../../public/images/icon-storm.webp";
+
+const ICON_MAP = {
+    "icon-sunny.webp": iconSunny,
+    "icon-partly-cloudy.webp": iconPartlyCloudy,
+    "icon-overcast.webp": iconOvercast,
+    "icon-fog.webp": iconFog,
+    "icon-drizzle.webp": iconDrizzle,
+    "icon-rain.webp": iconRain,
+    "icon-snow.webp": iconSnow,
+    "icon-storm.webp": iconStorm
+};
 
 const MainInfo = ({ geoData, forecastData }) => {
     const { current, current_units } = forecastData?.data || {};
+    const iconFileName = setIcon[current?.weather_code] || setIcon[0];
+    const iconSrc = ICON_MAP[iconFileName];
 
     return (
-        <div className="mt-8 md:px-14 bg-[url('../../public/images/bg-today-small.svg')] md:bg-[url('../../public/images/bg-today-large.svg')] flex h-[350px] flex-col md:flex-row items-center justify-center md:justify-between bg-center rounded-xl bg-cover bg-no-repeat p-4">
+        <div className="mt-8 md:px-14 bg-[url('../../public/images/bg-today-small.svg')] md:bg-[url('../../public/images/bg-today-large.svg')] flex h-[350px] flex-col md:flex-row items-center justify-[...]">
             <div>
                 <h1 className="text-center text-2xl font-black capitalize text-[var(--neutral-0)]">
                     {geoData?.name}, {geoData?.country}
@@ -21,7 +42,7 @@ const MainInfo = ({ geoData, forecastData }) => {
             <div className="mt-8 md:mt-0 flex items-center gap-4">
                 <img
                     className="size-28"
-                    src={`../../public/images/${setIcon[current?.weather_code] || setIcon[0]}`}
+                    src={iconSrc}
                     alt="weather icon"
                 />
                 <p className="text-7xl font-bold italic text-white">
